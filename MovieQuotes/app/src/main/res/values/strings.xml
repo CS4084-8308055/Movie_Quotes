@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Movie Quotes</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_movie_quote_detail">MovieQuoteDetailActivity</string>
+    <string name="title_activity_movie_quote_detail">Movie Quote</string>
 </resources>
