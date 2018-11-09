@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.moviequote_dialog, null, false);
         builder.setView(view);
+        builder.setTitle("Edit this quote");
         final TextView quoteEditText = view.findViewById(R.id.dialog_quote_edittext);
         final TextView movieEditText = view.findViewById(R.id.dialog_movie_edittext);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Map<String, Object> mq = new HashMap<>();
                 mq.put(Constants.KEY_QUOTE, quoteEditText.getText().toString());
-                mq.put(Constants.KEY_MOVIE, quoteEditText.getText().toString());
+                mq.put(Constants.KEY_MOVIE, movieEditText.getText().toString());
                 mq.put(Constants.KEY_CREATED, new Date());
                 FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH).add(mq);
 
