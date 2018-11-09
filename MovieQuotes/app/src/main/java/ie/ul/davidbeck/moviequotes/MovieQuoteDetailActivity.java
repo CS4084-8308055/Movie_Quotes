@@ -22,8 +22,8 @@ public class MovieQuoteDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie_quote_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mQuoteTextView = findViewById(R.id.detail_view_movie);
-        mMovieTextView = findViewById(R.id.detail_view_quote);
+        mQuoteTextView = findViewById(R.id.detail_view_muote);
+        mMovieTextView = findViewById(R.id.detail_view_Movie);
 
         String docId = getIntent().getStringExtra(Constants.EXTRA_DOC_ID);
 
