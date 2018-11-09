@@ -51,7 +51,7 @@ public class MovieQuoteDetailActivity extends AppCompatActivity {
                     mMovieTextView.setText((String)documentSnapshot.get(Constants.KEY_MOVIE));
                 }
             }
-        })
+        });
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +74,8 @@ public class MovieQuoteDetailActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.action_delete:
-                // TODO: Delete this quote and close this activity
+                mDocRef.delete();
+                finish();
                 return true;
         }
 
