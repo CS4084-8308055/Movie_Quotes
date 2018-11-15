@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -28,7 +29,12 @@ public class MovieQuoteAdapter extends RecyclerView.Adapter<MovieQuoteAdapter.Mo
     public MovieQuoteAdapter() {
         CollectionReference movieQuotesRef = FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH);
 
-        movieQuotesRef.orderBy(Constants.KEY_CREATED, Query.Direction.DESCENDING).limit(50)
+//        movieQuotesRef.orderBy(Constants.KEY_CREATED, Query.Direction.DESCENDING).limit(50)
+//                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+        Log.d(Constants.TAG, "About to run query");
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        movieQuotesRef.whereEqualTo(Constants.KEY_UID, uid)
+                .orderBy(Constants.KEY_CREATED, Query.Direction.DESCENDING).limit(50)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
