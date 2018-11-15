@@ -66,16 +66,16 @@ public class MainActivity extends AppCompatActivity {
 //                });
 
         // Temporary code
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        //auth.signOut();
-
-        FirebaseUser currentUser = auth.getCurrentUser();
-        if (currentUser == null){
-            Log.d(Constants.TAG, "There is no user.  Need to sign in!");
-            auth.signInAnonymously();
-        } else{
-            Log.d(Constants.TAG, "There is a user.  All set!");
-        }
+//        FirebaseAuth auth = FirebaseAuth.getInstance();
+//        //auth.signOut();
+//
+//        FirebaseUser currentUser = auth.getCurrentUser();
+//        if (currentUser == null){
+//            Log.d(Constants.TAG, "There is no user.  Need to sign in!");
+//            auth.signInAnonymously();
+//        } else{
+//            Log.d(Constants.TAG, "There is a user.  All set!");
+//        }
 
 
 
